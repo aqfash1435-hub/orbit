@@ -130,17 +130,22 @@ export default function HomeScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-      {/* Islamic Pattern Header */}
-      <View style={styles.header}>
-        <View style={styles.patternOverlay} />
-        <Text style={styles.bismillah}>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</Text>
-        <Text style={styles.greeting}>{getGreeting()}</Text>
-        <View style={styles.locationRow}>
-          <Ionicons name="location" size={16} color={ISLAMIC_GOLD} />
-          <Text style={styles.locationText}>{location}</Text>
+      {/* Islamic Pattern Header with Prayer Image */}
+      <ImageBackground
+        source={require('../assets/images/prayer-bg.png')}
+        style={styles.header}
+        imageStyle={styles.headerImage}
+      >
+        <View style={styles.headerOverlay}>
+          <Text style={styles.bismillah}>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</Text>
+          <Text style={styles.greeting}>{getGreeting()}</Text>
+          <View style={styles.locationRow}>
+            <Ionicons name="location" size={16} color={ISLAMIC_GOLD} />
+            <Text style={styles.locationText}>{location}</Text>
+          </View>
+          <Text style={styles.dateText}>{getIslamicDate()}</Text>
         </View>
-        <Text style={styles.dateText}>{getIslamicDate()}</Text>
-      </View>
+      </ImageBackground>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Daily Dua Card */}
