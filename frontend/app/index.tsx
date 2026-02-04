@@ -233,13 +233,21 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: ISLAMIC_ACCENT,
-    paddingVertical: 24,
-    paddingHorizontal: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
-    alignItems: 'center',
     borderBottomWidth: 2,
     borderBottomColor: ISLAMIC_GOLD,
+    overflow: 'hidden',
+  },
+  headerImage: {
+    resizeMode: 'cover',
+    opacity: 0.4,
+  },
+  headerOverlay: {
+    paddingVertical: 24,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    backgroundColor: 'rgba(26, 26, 46, 0.7)',
   },
   patternOverlay: {
     position: 'absolute',
